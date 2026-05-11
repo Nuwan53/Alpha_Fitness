@@ -44,13 +44,13 @@ $trainerStats = getTrainerStats($conn);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - Gym Management System</title>
+    <title>Admin Dashboard - Alpha Fitness</title>
     <link rel="stylesheet" href="assets/css/dashboard.css">
 </head>
 <body>
     <!-- HEADER -->
     <header>
-        <h1>💪 Gym Management Dashboard</h1>
+        <h1>💪 Alpha Fitness Dashboard</h1>
         <div class="header-actions">
             <div class="user-info">
                 <div class="user-avatar"><?php echo $userInitials; ?></div>

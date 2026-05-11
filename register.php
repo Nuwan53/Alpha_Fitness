@@ -56,45 +56,79 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - Gym Management System</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Register - Alpha Fitness</title>
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="container">
-        <h2>Create an Account</h2>
-        
-        <?php if ($error): ?>
-            <div class="error"><?= htmlspecialchars($error) ?></div>
-        <?php endif; ?>
-        
-        <?php if ($success): ?>
-            <div class="success"><?= htmlspecialchars($success) ?></div>
-        <?php endif; ?>
-        
-        <form method="POST" action="register.php">
-            <div class="form-group">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" value="<?= htmlspecialchars($name ?? '') ?>" required>
+    <div class="login-page">
+        <div class="login-container">
+            <!-- Hero Section -->
+            <div class="login-hero">
+                <div class="login-hero-content">
+                    <span class="gym-icon">💪</span>
+                    <h1>Alpha Fitness</h1>
+                    <p>Join Our Community</p>
+                    <p class="tagline">Start your fitness transformation today</p>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" value="<?= htmlspecialchars($email ?? '') ?>" required>
+
+            <!-- Form Section -->
+            <div class="login-form-section">
+                <h2>Create Account</h2>
+                <p class="form-subtitle">Join Alpha Fitness</p>
+
+                <?php if ($error): ?>
+                    <div class="error"><?= htmlspecialchars($error) ?></div>
+                <?php endif; ?>
+
+                <?php if ($success): ?>
+                    <div style="background: #d4edda; border-left: 4px solid #27ae60; color: #155724; padding: 15px 20px; border-radius: 4px; margin-bottom: 20px; font-weight: 500;">
+                        <?= htmlspecialchars($success) ?>
+                    </div>
+                <?php endif; ?>
+
+                <form method="POST" action="register.php">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" value="<?= htmlspecialchars($name ?? '') ?>" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" value="<?= htmlspecialchars($email ?? '') ?>" required placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required placeholder="Create a strong password">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm_password">Confirm Password</label>
+                        <input type="password" id="confirm_password" name="confirm_password" required placeholder="Confirm your password">
+                    </div>
+
+                    <button type="submit" class="btn-primary">Create Account</button>
+                </form>
+
+                <div class="signup-prompt">
+                    <p>Already have an account?</p>
+                    <a href="login.php">Sign in to your account →</a>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
-                <label for="confirm_password">Confirm Password:</label>
-                <input type="password" id="confirm_password" name="confirm_password" required>
-            </div>
-            <button type="submit">Register</button>
-        </form>
-        
-        <p>Already have an account? <a href="login.php">Login here</a></p>
+        </div>
     </div>
 </body>
+
 </html>
