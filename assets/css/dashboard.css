@@ -1010,3 +1010,92 @@ input[type="password"] {
     }
 }
 
+/* ================================
+   UTILITY & HELPER STYLES
+   ================================ */
+
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.badge-danger {
+    background: #fee2e2;
+    color: #7f1d1d;
+}
+
+.badge-warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.badge-info {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.badge-secondary {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+/* Status colors */
+.status-active { color: var(--success); }
+.status-inactive { color: var(--warning); }
+.status-suspended { color: var(--danger); }
+
+/* Currency formatting */
+.currency {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* Links */
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Print styles */
+@media print {
+    header, .sidebar, .logout-btn {
+        display: none;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+}

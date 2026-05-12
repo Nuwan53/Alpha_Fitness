@@ -46,6 +46,81 @@ $trainerStats = getTrainerStats($conn);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Alpha Fitness</title>
     <link rel="stylesheet" href="assets/css/dashboard.css">
+    <style>
+        .sidebar {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            width: 250px;
+            min-height: calc(100vh - 80px);
+            position: fixed;
+            left: 0;
+            top: 80px;
+            padding: 20px;
+            overflow-y: auto;
+            color: white;
+            box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        .sidebar h4 {
+            margin: 20px 0 10px 0;
+            font-size: 12px;
+            text-transform: uppercase;
+            opacity: 0.8;
+            letter-spacing: 0.5px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: 5px;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(5px);
+        }
+
+        .main-content {
+            margin-left: 250px;
+        }
+
+        @media (max-width: 900px) {
+            .sidebar {
+                width: 200px;
+            }
+            .main-content {
+                margin-left: 200px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .sidebar {
+                width: 100%;
+                min-height: auto;
+                position: relative;
+                top: 0;
+                display: flex;
+                flex-wrap: wrap;
+                padding: 10px;
+            }
+            .sidebar h4 {
+                flex: 0 0 100%;
+            }
+            .sidebar a {
+                flex: 1 0 auto;
+                min-width: 100px;
+            }
+            .main-content {
+                margin-left: 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- HEADER -->
@@ -63,7 +138,24 @@ $trainerStats = getTrainerStats($conn);
         </div>
     </header>
 
+    <!-- SIDEBAR NAVIGATION -->
+    <div class="sidebar">
+        <h4>📋 Management</h4>
+        <a href="dashboard.php">Dashboard</a>
+        <a href="members.php">Members</a>
+        <a href="trainers.php">Trainers</a>
+        <a href="classes.php">Classes</a>
+        <a href="membership-plans.php">Membership Plans</a>
+        
+        <h4>💳 Finance</h4>
+        <a href="payments.php">Payments</a>
+        
+        <h4>📍 Operations</h4>
+        <a href="attendance-checkin.php">Check-In</a>
+    </div>
+
     <!-- MAIN CONTAINER -->
+    <div class="main-content">
     <div class="container">
         
         <!-- ===============================================
@@ -545,6 +637,8 @@ $trainerStats = getTrainerStats($conn);
 
     </div>
     <!-- END CONTAINER -->
+    </div>
+    <!-- END MAIN CONTENT -->
 
 </body>
 </html>
